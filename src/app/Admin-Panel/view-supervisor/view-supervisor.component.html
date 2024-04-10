@@ -1,0 +1,22 @@
+<h2 class="heading">List of Supervisors</h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let w of supervisors">
+        <th scope="row">{{w.userId}}</th>
+        <td>{{w.name}} </td>
+        <td>{{w.email}} </td>
+        <td>{{w.phone}} </td>
+        <td> <i class="bi bi-trash delete" (click)="deleteSupervisor(w.userId)"></i></td>
+      </tr>
+     
+    </tbody>
+  </table>

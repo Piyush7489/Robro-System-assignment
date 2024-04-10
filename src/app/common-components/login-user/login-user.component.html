@@ -1,0 +1,50 @@
+<body>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+
+  <form (ngSubmit)="login(loginForm)" [formGroup]="loginForm">
+    <h3>Login Here</h3>
+    <!-- Assuming loginData is initialized in the component -->
+    <!-- <label for="email">Username</label>
+    <input type="text" [(ngModel)]="loginData.email" name="email" placeholder="Email or Phone" id="email"> -->
+    <div class="form-group">
+      <label for="exampleInputEmail1 " class="login_heading">Email Id</label>
+      <div class="position-relative mb_30">
+          <i class="fi fi-rr-envelope input_icons"></i>
+          <input type="email" class="form-control profile_input" placeholder="Enter your email"
+              formControlName="email"><br>
+          <div *ngIf="email">
+              <small *ngIf="email.errors?.['required'] && email.touched" class="text-danger">This
+                  Field Is Requierd</small>
+              <small *ngIf="email.errors?.['email'] && email.dirty" class="text-danger">invalid
+                  email</small>
+              <small *ngIf="email.errors?.['pattern'] && email.dirty" class="text-danger">email
+                  format is wrong</small>
+          </div>
+      </div>
+      <label for="exampleInputEmail1" class="login_heading">Password</label>
+      <div class="position-relative mb_12">
+          <i class="fi fi-rr-lock input_icons"></i>
+          <input type="password" class="form-control  profile_input px_41"
+              placeholder="Enter your password" formControlName="password">
+          <br>
+          <div *ngIf="password">
+              <small class="text-danger"
+                  *ngIf="password.errors?.['required'] && password.touched">This Field Is
+                  Requierd</small>
+              <small class="text-danger" *ngIf="password.errors?.['pattern']">Password must
+                  contain at least one number, one uppercase and a lowercase letter
+                  and at least 8 characters</small>
+          </div>
+          <i class="fi fi-rr-eye eye_icon2 lh-1"></i>
+      </div>
+  
+</div>
+    <!-- <label for="password">Password</label>
+    <input type="password" [(ngModel)]="loginData.password" name="password" placeholder="Password" id="password"> -->
+
+    <button type="submit" [disabled]="loginForm.invalid">Log In</button>
+  </form>
+</body>

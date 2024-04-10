@@ -1,0 +1,42 @@
+
+
+  body{
+    background-color: antiquewhite;
+  }
+   /* Style for navigation bar */
+   .navbar {
+    background-color: #65446e;
+    overflow: hidden;
+    margin-top: -65px;
+  }
+
+  /* Style for navigation links */
+  .navbar a {
+    float: left;
+    display: block;
+    color: #060606a4;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 40rem;
+  }
+
+  /* Change color on hover */
+  .navbar a:hover {
+    background-color: #b0717131;
+    color: black;
+  }
+  h3{
+    margin-left: 180px;
+    text-align: start;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+  }
+  .profileImage{
+    height: 20px;
+    width: 20px;
+    margin-left: auto;
+    /* overflow: hidden; */
+  }
+  

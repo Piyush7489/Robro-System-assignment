@@ -1,0 +1,34 @@
+.bg{
+    background-color: rgba(9, 140, 255, 0.45);
+}
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  /* Style for sidebar links */
+  .sidebar-link {
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+    color: #000;
+    text-align: center;
+  }
+
+  /* Change color on hover */
+  .sidebar-link:hover {
+    background-color: #c27e7e;
+  }
+
+  /* Style for heading in sidebar */
+  .sidebar-heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }

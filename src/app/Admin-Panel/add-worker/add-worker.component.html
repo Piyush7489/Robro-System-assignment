@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Add Worker</h2>
+    <form (ngSubmit)="addWorker(addWorkerData)" [formGroup]="addWorkerData" method="post">
+      <div>
+        <label for="name">User Name</label>
+        <input type="text" id="name" formControlName="name" placeholder="Enter User Name">
+        <div *ngIf="addWorkerData.get('name')?.invalid && (addWorkerData.get('name')?.dirty || addWorkerData.get('name')?.touched)">
+          <div class="text-danger" *ngIf="addWorkerData.get('name')?.hasError('required')">User Name is required.</div>
+          <div class="text-danger" *ngIf="addWorkerData.get('name')?.hasError('minlength')">User Name must be at least 3 characters long.</div>
+          <div class="text-danger" *ngIf="addWorkerData.get('name')?.hasError('maxlength')">User Name cannot be more than 10 characters long.</div>
+        </div>
+      </div>
+
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email"  [formGroup]="addWorkerData"  formControlName="email" id="email" placeholder="Enter Email">
+        <div *ngIf="email?.invalid && (addWorkerData.get('email')?.dirty || addWorkerData.get('email')?.touched)">
+          <div class="text-danger" *ngIf="email?.errors?.['required']">Email is required.</div>
+          <div class="text-danger" *ngIf="email?.errors?.['pattern']">Please enter a valid Email.</div>
+        </div>
+      </div>
+
+  
+      <div>
+        <label for="password">Password</label>
+        <input type="password"  [formGroup]="addWorkerData" formControlName="password" id="password" placeholder="Enter Password">
+        <div *ngIf="password?.invalid && (addWorkerData.get('password')?.dirty || addWorkerData.get('password')?.touched)">
+          <div class="text-danger" *ngIf="password?.errors?.['required']">Password is required.</div>
+          <div class="text-danger" *ngIf="password?.errors?.['pattern']">Please enter a valid password.</div>
+        </div>
+      </div>
+
+      <div>
+        <label for="phone">Phone Number:</label>
+        <input type="text"  [formGroup]="addWorkerData"  formControlName="phone" id="phone" placeholder="Enter phone number">
+        <div *ngIf="phone?.invalid && (addWorkerData.get('phone')?.dirty || addWorkerData.get('phone')?.touched)">
+          <div class="text-danger" *ngIf="phone?.errors?.['required']">Phone number is required.</div>
+          <div class="text-danger" *ngIf="phone?.errors?.['pattern']">Please enter a valid 10-digit phone number.</div>
+        </div>
+      </div>
+
+        
+      <input type="submit" [disabled]="addWorkerData.invalid" value="Submit">
+    </form>
+  </div>
